@@ -75,7 +75,7 @@ jobs:
           # - "-nvidia"
           - ""
         zfs_tag:
-          - "-zfs"
+          # - "-zfs"
           - ""
         include:
           - image_name: fedora-coreos
