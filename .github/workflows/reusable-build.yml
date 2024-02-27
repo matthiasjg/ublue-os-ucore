@@ -39,6 +39,13 @@ jobs:
       linux: ${{ steps.fetch.outputs.linux }}
       version: ${{ steps.fetch.outputs.version }}
     steps:
+      # Install system dependencies missing in the buildjet-4vcpu-ubuntu-2204-arm runner
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y skopeo
+          sudo apt-get install -y buildah
+          
       - name: Fetch CoreOS stream versions
         id: fetch
         run: |
