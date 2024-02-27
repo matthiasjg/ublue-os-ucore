@@ -132,6 +132,13 @@ jobs:
             org.opencontainers.image.title=${{ matrix.image_name }}
             org.opencontainers.image.version=${{ matrix.image_version }}
 
+      # Install system dependencies missing in the buildjet-4vcpu-ubuntu-2204-arm runner
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y skopeo
+          sudo apt-get install -y buildah
+
       # Build image using Buildah action
       - name: Build Image
         id: build_image
@@ -294,6 +301,13 @@ jobs:
             org.opencontainers.image.description=${{ matrix.description }}
             org.opencontainers.image.title=${{ matrix.image_base }}${{ matrix.image_suffix }}
             org.opencontainers.image.version=${{ matrix.image_version }}
+
+      # Install system dependencies missing in the buildjet-4vcpu-ubuntu-2204-arm runner
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y skopeo
+          sudo apt-get install -y buildah
 
       # Build image using Buildah action
       - name: Build Image
