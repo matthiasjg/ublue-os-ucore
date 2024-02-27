@@ -45,7 +45,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y skopeo
           sudo apt-get install -y buildah
-          
+
       - name: Fetch CoreOS stream versions
         id: fetch
         run: |
@@ -164,6 +164,8 @@ jobs:
             ZFS_TAG=${{ matrix.zfs_tag }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
+          # archs: arm64
+          platforms: linux/arm64
 
       # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
       # https://github.com/macbre/push-to-ghcr/issues/12
@@ -336,6 +338,8 @@ jobs:
           oci: false
           extra-args: |
             --target=${{ matrix.image_base }}${{ matrix.image_suffix }}
+          # archs: arm64
+          platforms: linux/arm64
 
       # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
       # https://github.com/macbre/push-to-ghcr/issues/12
