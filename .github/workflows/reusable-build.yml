@@ -239,10 +239,10 @@ jobs:
           - ""
           - "-hci"
         nvidia_tag:
-          - "-nvidia"
+          # - "-nvidia"
           - ""
         zfs_tag:
-          - "-zfs"
+          # - "-zfs"
           - ""
         include:
           - image_base: ucore
