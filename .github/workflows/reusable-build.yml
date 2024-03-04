@@ -46,11 +46,11 @@ jobs:
           sudo apt-get install -y skopeo
           sudo apt-get install -y buildah
           sudo apt-get install -y podman
-          export REGISTRY_AUTH_FILE=$HOME/auth.json
 
       - name: Fetch CoreOS stream versions
         id: fetch
         run: |
+          export REGISTRY_AUTH_FILE=$HOME/auth.json
           skopeo inspect docker://quay.io/fedora/fedora-coreos:${{ inputs.coreos_version }} > inspect.json
           linux=$(jq -r '.["Labels"]["ostree.linux"]' inspect.json)
           echo "linux=$linux" >> $GITHUB_OUTPUT
