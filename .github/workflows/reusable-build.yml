@@ -255,6 +255,9 @@ jobs:
             description: An OCI image of Fedora CoreOS with a few extra tools, hardware support, and storage utilities
           - image_suffix: "-hci"
             description: A hyper-converged infrastructure OCI image of Fedora CoreOS (storage + hypervisor)
+        exclude:
+          - nvidia_tag: ""
+            zfs_tag: ""
 
     steps:
 
