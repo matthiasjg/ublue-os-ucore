@@ -81,7 +81,7 @@ jobs:
           - ""
         include:
           - image_name: fedora-coreos
-          - image_version: "39.20240210.3.0" # ${{ needs.stream_info.outputs.version }}
+          - image_version: ${{ needs.stream_info.outputs.version }}
           - pr_prefix: ${{ needs.workflow_info.outputs.pr_prefix }}
         exclude:
           - nvidia_tag: ""
