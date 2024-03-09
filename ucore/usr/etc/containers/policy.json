@@ -29,6 +29,15 @@
                     }
                 }
             ],
+            "ghcr.io/matthiasjg": [
+                {
+                    "type": "sigstoreSigned",
+                    "keyPath": "/usr/etc/pki/containers/matthiasjg-ublue-os.pub",
+                    "signedIdentity": {
+                        "type": "matchRepository"
+                    }
+                }
+            ],
             "": [
                 {
                     "type": "insecureAcceptAnything"

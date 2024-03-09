@@ -1,3 +1,5 @@
 docker:
   ghcr.io/ublue-os:
     use-sigstore-attachments: true
+  ghcr.io/matthiasjg:
+    use-sigstore-attachments: true
